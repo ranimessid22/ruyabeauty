@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <title>Hydrafaciale</title>
+  <link rel="stylesheet" href="style6.css">
+</head>
+<body>
+  <header>
+    <!-- Ton logo/menu -->
+  </header>
+
+  <div class="banner">
+    <div class="content">
+      <div class="text">
+        <h2>MMassage gun<br><span>prix:2 seances 60dt</span>.</h2> 
+        <p>Le massage gun utilise des vibrations puissantes pour détendre les muscles, améliorer la circulation sanguine et soulager les tensions. Idéal pour la récupération musculaire après le sport ou pour se relaxer en profondeur.</p>
+        <a class="btn-accueil" href="spa.html">Services</a> 
+       <a class="btn-form" href="#form-modal">Rendez-vous</a>
+      </div>
+      <img src="gun.jpg" alt="Soin visage Hydrafaciale">
+    </div>
+  </div>
+   <!-- Formulaire modal caché -->
+  <div id="form-modal" class="modal">
+    <div class="modal-content">
+      <a href="#" class="close-btn">&times;</a>
+      <h2>Prendre un rendez-vous</h2>
+      <form>
+        <label for="name">Nom :</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="phone">Téléphone :</label><br>
+        <input type="tel" id="phone" name="phone" required><br><br>
+
+        <label for="date">Date :</label><br>
+        <input type="date" id="date" name="date" required><br><br>
+
+        <label for="message">Message :</label><br>
+        <textarea id="message" name="message"></textarea><br><br>
+
+        <button type="submit">Envoyer</button>
+      </form>
+    </div>
+  </div>
+  <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const form = document.querySelector("#form-modal form");
+    form.addEventListener("submit", function(event) {
+      event.preventDefault(); // Empêche l'envoi réel du formulaire
+     alert("Nous vous contacterons pour confirmer votre rendez-vous. Bienvenue !");
+
+      // Tu peux aussi remettre le formulaire à zéro si tu veux
+      form.reset();
+      // Et fermer la modal (en enlevant le hash dans l'URL)
+      window.location.hash = "";
+    });
+  });
+</script>
+</body>
+</html>

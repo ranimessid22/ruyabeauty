@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <title>Hydrafaciale</title>
+  <link rel="stylesheet" href="style6.css">
+</head>
+<body>
+  <header>
+    <!-- Ton logo/menu -->
+  </header>
+
+  <div class="banner">
+    <div class="content">
+      <div class="text">
+        <h2>Epilation corps corps laser <span>prix:4 seance 900dt</span>.</h2> <br>
+        <h2>Jambes et maillot integral  <span>prix:4s eance 200dt</span></h2><br>
+        <h2>Maillot integral et aisselles <span>prix:4 seance 250dt</span> </h2><br>
+        <h2>Jambes et maillot intégral et aisselles <span>prix:4 seance 300dt</span> </h2><br>
+        
+        <a class="btn-accueil" href="list.html">Services</a> 
+        <a class="btn-form" href="#form-modal">Rendez-vous</a>
+      </div>
+      <img src="ep.jpg" alt="faux angle main et pied">
+      
+      
+    </div>
+    </div>
+   <!-- Formulaire modal caché -->
+  <div id="form-modal" class="modal">
+    <div class="modal-content">
+      <a href="#" class="close-btn">&times;</a>
+      <h2>Prendre un rendez-vous</h2>
+      <form>
+        <label for="name">Nom :</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="phone">Téléphone :</label><br>
+        <input type="tel" id="phone" name="phone" required><br><br>
+
+        <label for="date">Date :</label><br>
+        <input type="date" id="date" name="date" required><br><br>
+
+        <label for="message">Message :</label><br>
+        <textarea id="message" name="message" placeholder="specialisez votre epilation ici svpl!"></textarea><br><br>
+
+        <button type="submit">Envoyer</button>
+      </form>
+    </div>
+  </div>
+  <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const form = document.querySelector("#form-modal form");
+    form.addEventListener("submit", function(event) {
+      event.preventDefault(); // Empêche l'envoi réel du formulaire
+     alert("Nous vous contacterons pour confirmer votre rendez-vous. Bienvenue !");
+
+      // Tu peux aussi remettre le formulaire à zéro si tu veux
+      form.reset();
+      // Et fermer la modal (en enlevant le hash dans l'URL)
+      window.location.hash = "";
+    });
+  });
+</script>
+  </div>
+</body>
+</html>

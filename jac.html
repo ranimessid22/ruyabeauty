@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <title>Hydrafaciale</title>
+  <link rel="stylesheet" href="style6.css">
+</head>
+<body>
+  <header>
+    <!-- Ton logo/menu -->
+  </header>
+
+  <div class="banner">
+    <div class="content">
+      <div class="text">
+        <h2>Jacuzzi </h2> <br>
+        <h3 style="color: rgb(239, 25, 161);"><span>
+            15m: 30dt<br>
+            30m:50dt<br>
+            60m:70dt<br>
+        </span></h3>
+        <p>Profitez d’un moment de détente absolue grâce à notre jacuzzi. La chaleur de l’eau combinée aux jets massants améliore la circulation sanguine, soulage les tensions musculaires et réduit le stress. Idéal pour revitaliser le corps et l’esprit, le jacuzzi favorise également une meilleure qualité de sommeil et un bien-être durable.!</p>
+        <a class="btn-accueil" href="spa.html">Services</a> 
+        <a class="btn-form" href="#form-modal">Rendez-vous</a>
+      </div>
+      <img src="jac.jpg" alt="Soin visage Hydrafaciale">
+    </div>
+  </div>
+   <!-- Formulaire modal caché -->
+  <div id="form-modal" class="modal">
+    <div class="modal-content">
+      <a href="#" class="close-btn">&times;</a>
+      <h2>Prendre un rendez-vous</h2>
+      <form>
+        <label for="name">Nom :</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="phone">Téléphone :</label><br>
+        <input type="tel" id="phone" name="phone" required><br><br>
+
+        <label for="date">Date :</label><br>
+        <input type="date" id="date" name="date" required><br><br>
+
+        <label for="message">Message :</label><br>
+        <textarea id="message" name="message"></textarea><br><br>
+
+        <button type="submit">Envoyer</button>
+      </form>
+    </div>
+  </div>
+  <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const form = document.querySelector("#form-modal form");
+    form.addEventListener("submit", function(event) {
+      event.preventDefault(); // Empêche l'envoi réel du formulaire
+     alert("Nous vous contacterons pour confirmer votre rendez-vous. Bienvenue !");
+
+      // Tu peux aussi remettre le formulaire à zéro si tu veux
+      form.reset();
+      // Et fermer la modal (en enlevant le hash dans l'URL)
+      window.location.hash = "";
+    });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+*{
+	margin: 0;
+	padding: 0;
+font-family: 'Anton', sans-serif;
+}
+.header{
+  min-height: 100vh;
+  width: 100%;
+  background-image: url(msg.jpg);
+  background-position: center;
+  background-size: cover;
+  position: relative;
+
+
+}
+nav{
+	display: flex;
+	padding: 2% 6%;
+	justify-content: space-between;
+	align-items: right;
+}
+.nav-links {
+	flex: 1;
+	text-align: center;
+}
+
+.nav-links ul li {
+list-style: none;
+display: inline-block;
+padding: 15px 15px;
+position: relative;
+}
+.nav-links ul li a {
+	color: bisque;
+	text-decoration:none;
+	font-size: 40px;
+}
+.nav-links ul li ::after {
+	content: '';
+	width: 0%;
+	height: 2px;
+	background: #ea92bb;;
+	display: block;
+	margin: auto;
+	transition: 0.5s;
+}
+.nav-links ul li :hover::after {
+	width: 100%;
+}
+.logo {
+  position: relative;
+  display: inline-block;
+}
+
+.logo img {
+  display: block; /* Important pour enlever les petits espaces sous l’image */
+}
+
+.logo::after {
+  content: "Cliquez pour revenir à la page précédente";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 20px;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 10px 20px;
+  border-radius: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  text-align: center;
+}
+
+.logo:hover::after {
+  opacity: 1;
+}

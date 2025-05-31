@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body {
+  background-image: url('satin2.jpeg');
+  background-size: cover; /* L'image couvre toute la page */
+  background-position: center; /* Centrer l'image */
+  background-repeat: no-repeat; /* Ne pas répéter l'image */
+}
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 40px 100px;
+  z-index: 1000;
+}
+
+.banner {
+  position: relative;
+  width: 100%;
+  min-height: 90vh;
+  padding: 0 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner .content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* 🟡 image et texte séparés */
+  width: 100%;
+  gap: 20px;
+}
+
+.banner .content .text {
+  flex: 0 0 50%;
+}
+
+.banner .content h2 {
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 2.5em;
+  letter-spacing: 0.1em;
+  color: rgb(197, 16, 109);
+}
+
+.banner .content h2 span {
+  font-weight: 800;
+}
+
+.banner .content p {
+  font-size: 1.2em;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  line-height: 1.5em;
+  color: black;
+  margin: 15px 0 35px;
+}
+
+.banner .content img {
+  flex: 0 0 30%;
+  max-width: 300px;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-left: auto; /* 🟡 pousse l’image à droite */
+}
+
+.btn-accueil,
+.btn-form {
+  display: inline-block;
+  background-color: #e21b96;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  margin-bottom: 1rem;
+}
+
+.btn-accueil:hover,
+.btn-form:hover {
+  background-color: #d10b85;
+}
+/* Style général pour la modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+/* Contenu de la modal */
+.modal-content {
+  background: #fff;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 400px;
+  position: relative;
+}
+
+/* Bouton pour fermer */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: #333;
+  font-size: 24px;
+  text-decoration: none;
+}
+
+/* Champs du formulaire */
+.modal-content form input,
+.modal-content form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.modal-content form button {
+  background: #e21b96;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.modal-content form button:hover {
+  background: #c01680;
+}
+
+/* Afficher la modal quand le lien est cliqué */
+:target.modal {
+  display: block;
+}
