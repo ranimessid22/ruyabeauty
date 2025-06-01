@@ -120,37 +120,53 @@ nav {
 }
 .nav-linkss ul {
   display: flex;
-  justify-content: center; /* centre horizontalement */
+  justify-content: center; /* centre toute la liste */
   gap: 20px;
   padding: 0;
   margin: 0;
   list-style: none;
+  position: relative;
 }
 
 .nav-linkss ul li {
-  /* Pas de style particulier pour l'instant */
+  /* style commun */
 }
 
 .nav-linkss ul li a {
-  color: #e21b96; /* rose vif */
+  color: #e21b96;
   text-decoration: none;
   font-size: 40px;
   font-weight: 600;
   transition: color 0.3s;
 }
 
-.nav-linkss ul li a:hover,
-.nav-linkss ul li a.active {
-  color: #d10b85; /* rose foncé */
+/* Centrer uniquement le lien "Contact" */
+.nav-linkss ul li:last-child {
+  margin-left: auto;   /* pousse "Contact" à droite */
+  margin-right: auto;  /* pousse "Contact" au centre */
 }
 
-/* Responsive mobile */
+/* Ou, si tu veux forcer juste le lien Contact à être centré dans la nav entière,
+   tu peux appliquer un flex-grow */
+
+.nav-linkss ul li:last-child {
+  flex-grow: 1;
+  text-align: center;
+}
+
+/* Au survol et actif */
+.nav-linkss ul li a:hover,
+.nav-linkss ul li a.active {
+  color: #d10b85;
+}
+
+/* Mobile : liste verticale centrée */
 @media (max-width: 600px) {
   .nav-linkss ul {
     flex-direction: column;
     gap: 10px;
   }
-  
+
   .nav-linkss ul li a {
     font-size: 24px;
   }
