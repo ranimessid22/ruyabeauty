@@ -118,3 +118,40 @@ nav {
     width: 80%;
   }
 }
+.nav-linkss ul {
+  display: flex;
+  justify-content: center; /* centre horizontalement */
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.nav-linkss ul li {
+  /* Pas de style particulier pour l'instant */
+}
+
+.nav-linkss ul li a {
+  color: #e21b96; /* rose vif */
+  text-decoration: none;
+  font-size: 40px;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.nav-linkss ul li a:hover,
+.nav-linkss ul li a.active {
+  color: #d10b85; /* rose foncé */
+}
+
+/* Responsive mobile */
+@media (max-width: 600px) {
+  .nav-linkss ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .nav-linkss ul li a {
+    font-size: 24px;
+  }
+}
