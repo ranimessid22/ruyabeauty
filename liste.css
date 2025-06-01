@@ -10,7 +10,7 @@
 .header {
   min-height: 100vh;
   width: 100%;
-  background-image: url('msg.jpg');
+  background-image: url('satin2.jpeg');
   background-position: center;
   background-size: cover;
   position: relative;
@@ -38,7 +38,7 @@ nav {
 }
 
 .nav-links ul li a {
-  color: bisque;
+  color: rgb(238, 17, 198);
   text-decoration: none;
   font-size: 40px;
 }
