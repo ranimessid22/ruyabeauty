@@ -1,15 +1,16 @@
-/* Styles généraux */
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Poppins', sans-serif;
   box-sizing: border-box;
+  font-family: 'Anton', sans-serif;
 }
 
 .header {
   min-height: 100vh;
   width: 100%;
-  background-image: url(satin3.jpeg);
+  background-image: url('msg.jpg');
   background-position: center;
   background-size: cover;
   position: relative;
@@ -19,67 +20,41 @@ nav {
   display: flex;
   padding: 2% 6%;
   justify-content: space-between;
-  align-items: center;
+  align-items: center; /* corrigé */
 }
 
-nav .logo {
-  width: 100px;
-}
-
-.nav-links,
-.nav-linkss {
+.nav-links {
   flex: 1;
   text-align: center;
 }
 
-.nav-links ul li,
-.nav-linkss ul li {
+.nav-links ul {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links ul li {
   list-style: none;
-  display: inline-block;
-  padding: 15px 15px;
-  position: relative;
 }
 
 .nav-links ul li a {
-  color: rgb(218, 18, 108);
+  color: bisque;
   text-decoration: none;
   font-size: 40px;
 }
 
-.nav-linkss ul li a {
-  color: rgb(139, 5, 65);
-  text-decoration: none;
-  font-size: 70px;
-}
-
-.nav-links ul li::after,
-.nav-linkss ul li::after {
+.nav-links ul li::after {
   content: '';
   width: 0%;
   height: 2px;
-  background: beige;
+  background: #ea92bb;
   display: block;
   margin: auto;
   transition: 0.5s;
 }
 
-.nav-links ul li:hover::after,
-.nav-linkss ul li:hover::after {
+.nav-links ul li:hover::after {
   width: 100%;
-}
-
-.btn-accueil {
-  display: inline-block;
-  background-color: #b4368e;
-  color: #fff;
-  padding: 0.7rem 2rem;
-  border-radius: 4px;
-  text-decoration: none;
-  margin-bottom: 2rem;
-}
-
-.btn-accueil:hover {
-  background-color: #ef1a6f;
 }
 
 .contact-container {
@@ -91,28 +66,33 @@ nav .logo {
 }
 
 .contact-card {
-  background-color: #f5f5dc;
+  background-color: whitesmoke;
   padding: 2rem;
   border-radius: 10px;
   width: 200px;
   text-align: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.contact-img {
+  width: 50px;
+  margin-bottom: 1rem;
+}
+
+.contact-card h1 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
 }
 
 .contact-card a {
+  display: block;
   text-decoration: none;
   color: #000;
   font-weight: bold;
-  display: block;
   margin-top: 1rem;
 }
 
-.nav-links ul li + li,
-.nav-linkss ul li + li {
-  margin-top: 15px;
-}
-
-/* Styles spécifiques pour les mobiles */
+/* Responsive pour mobile */
 @media (max-width: 600px) {
   nav {
     flex-direction: column;
@@ -120,29 +100,13 @@ nav .logo {
     padding: 10px;
   }
 
-  nav .logo {
-    width: 70px;
-    margin-bottom: 10px;
+  .nav-links ul {
+    flex-direction: column;
+    gap: 10px;
   }
 
-  .nav-links ul li,
-  .nav-linkss ul li {
-    display: block;
-    padding: 10px 0;
-  }
-
-  .nav-links ul li a,
-  .nav-linkss ul li a {
-    font-size: 20px; /* Réduit la taille de la police pour mobile */
-  }
-
-  .btn-accueil {
-    padding: 0.5rem 1rem;
-    font-size: 16px;
-  }
-
-  .header {
-    min-height: 60vh;
+  .nav-links ul li a {
+    font-size: 24px;
   }
 
   .contact-container {
