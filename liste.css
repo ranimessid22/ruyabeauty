@@ -1,3 +1,8 @@
+@media (max-width: 600px) {
+  nav {
+    padding: 10px;
+  }
+}
 
 .header{
     min-height: 100vh;
@@ -106,4 +111,8 @@
       display: block;
       margin-top: 1rem;
     }
+    .nav-links ul li + li {
+    margin-top: 15px;
+  }
+
     

@@ -1,3 +1,8 @@
+@media (max-width: 600px) {
+  nav {
+    padding: 10px;
+  }
+}
 *{
 	margin: 0;
 	padding: 0;
@@ -11,6 +16,9 @@ font-family: 'Anton', sans-serif;
   background-position: center;
   background-size: cover;
   position: relative;
+.nav-links ul li + li {
+    margin-top: 15px;
+  }
 
 
 }
@@ -37,7 +45,7 @@ position: relative;
 .nav-links ul li a {
 	color: blanchedalmond;
 	text-decoration:none;
-	font-size: 30px;
+	font-size: 20px;
 }
 .nav-links ul li ::after {
 	content: '';
@@ -53,7 +61,7 @@ position: relative;
 }
 .text-box {
 
-font-size: 45px;
+font-size: 25px;
 width: 90%;
 color: white;
 position: absolute;

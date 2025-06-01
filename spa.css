@@ -1,3 +1,8 @@
+@media (max-width: 600px) {
+  nav {
+    padding: 10px;
+  }
+}
 *{
 	margin: 0;
 	padding: 0;
@@ -19,6 +24,10 @@ nav{
 	justify-content: space-between;
 	align-items: right;
 }
+.nav-links ul li + li {
+    margin-top: 15px;
+  }
+
 .nav-links {
 	flex: 1;
 	text-align: center;

@@ -1,3 +1,8 @@
+@media (max-width: 600px) {
+  nav {
+    padding: 10px;
+  }
+}
 *{
 	margin: 0;
 	padding: 0;
@@ -11,6 +16,9 @@ font-family: 'Anton', sans-serif;
   background-size: cover;
   position: relative;
 
+.nav-links ul li + li {
+    margin-top: 15px;
+  }
 
 }
 nav{
