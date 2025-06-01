@@ -1,26 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
-@media (max-width: 600px) {
-  nav {
-    padding: 10px;
-  }
-}
-*
-{
+
+/* RESET */
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
-.nav-links ul li + li {
-    margin-top: 15px;
-  }
 
+/* BODY */
 body {
   background-image: url('satin2.jpeg');
-  background-size: cover; /* L'image couvre toute la page */
-  background-position: center; /* Centrer l'image */
-  background-repeat: no-repeat; /* Ne pas répéter l'image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
+
+/* HEADER */
 header {
   position: absolute;
   top: 0;
@@ -33,6 +29,7 @@ header {
   z-index: 1000;
 }
 
+/* BANNER */
 .banner {
   position: relative;
   width: 100%;
@@ -46,7 +43,7 @@ header {
 .banner .content {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* 🟡 image et texte séparés */
+  justify-content: space-between;
   width: 100%;
   gap: 20px;
 }
@@ -81,9 +78,10 @@ header {
   max-width: 300px;
   border-radius: 10px;
   object-fit: cover;
-  margin-left: auto; /* 🟡 pousse l’image à droite */
+  margin-left: auto;
 }
 
+/* BUTTONS */
 .btn-accueil,
 .btn-form {
   display: inline-block;
@@ -99,7 +97,8 @@ header {
 .btn-form:hover {
   background-color: #d10b85;
 }
-/* Style général pour la modal */
+
+/* MODAL */
 .modal {
   display: none;
   position: fixed;
@@ -112,7 +111,6 @@ header {
   background: rgba(0, 0, 0, 0.6);
 }
 
-/* Contenu de la modal */
 .modal-content {
   background: #fff;
   margin: 10% auto;
@@ -122,7 +120,6 @@ header {
   position: relative;
 }
 
-/* Bouton pour fermer */
 .close-btn {
   position: absolute;
   top: 10px;
@@ -132,7 +129,6 @@ header {
   text-decoration: none;
 }
 
-/* Champs du formulaire */
 .modal-content form input,
 .modal-content form textarea {
   width: 100%;
@@ -153,7 +149,50 @@ header {
   background: #c01680;
 }
 
-/* Afficher la modal quand le lien est cliqué */
 :target.modal {
   display: block;
+}
+
+/* NAVIGATION */
+.nav-links ul li + li {
+  margin-top: 15px;
+}
+
+/* ---------------------- */
+/* MEDIA QUERIES MOBILE 🟢 */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .banner {
+    flex-direction: column;
+    padding: 0 20px;
+  }
+
+  .banner .content {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .banner .content .text {
+    flex: 1 1 100%;
+    text-align: center;
+  }
+
+  .banner .content h2 {
+    font-size: 2em;
+  }
+
+  .banner .content p {
+    font-size: 1em;
+  }
+
+  .banner .content img {
+    flex: 1 1 100%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
 }

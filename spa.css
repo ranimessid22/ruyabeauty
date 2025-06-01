@@ -1,68 +1,77 @@
-@media (max-width: 600px) {
-  nav {
-    padding: 10px;
-  }
+/* Import de la police */
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+/* Styles généraux */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Anton', sans-serif;
 }
-*{
-	margin: 0;
-	padding: 0;
-font-family: 'Anton', sans-serif;
-}
-.header{
+
+/* Header */
+.header {
   min-height: 100vh;
   width: 100%;
-  background-image: url(msg.jpg);
+  background-image: url('msg.jpg');
   background-position: center;
   background-size: cover;
   position: relative;
-
-
 }
-nav{
-	display: flex;
-	padding: 2% 6%;
-	justify-content: space-between;
-	align-items: right;
-}
-.nav-links ul li + li {
-    margin-top: 15px;
-  }
 
+/* Navigation */
+nav {
+  display: flex;
+  padding: 2% 6%;
+  justify-content: space-between;
+  align-items: center; /* ➜ corrigé (right n’est pas valide !) */
+}
+
+/* Liens de navigation */
 .nav-links {
-	flex: 1;
-	text-align: center;
+  flex: 1;
+  text-align: center;
+}
+
+.nav-links ul li + li {
+  margin-top: 15px;
 }
 
 .nav-links ul li {
-list-style: none;
-display: inline-block;
-padding: 15px 15px;
-position: relative;
+  list-style: none;
+  display: inline-block;
+  padding: 15px 15px;
+  position: relative;
 }
+
 .nav-links ul li a {
-	color: bisque;
-	text-decoration:none;
-	font-size: 40px;
+  color: bisque;
+  text-decoration: none;
+  font-size: 40px;
 }
-.nav-links ul li ::after {
-	content: '';
-	width: 0%;
-	height: 2px;
-	background: #ea92bb;;
-	display: block;
-	margin: auto;
-	transition: 0.5s;
+
+.nav-links ul li::after {
+  content: '';
+  width: 0%;
+  height: 2px;
+  background: #ea92bb;
+  display: block;
+  margin: auto;
+  transition: 0.5s;
 }
-.nav-links ul li :hover::after {
-	width: 100%;
+
+.nav-links ul li:hover::after {
+  width: 100%;
 }
+
+/* Logo avec effet de hover */
 .logo {
   position: relative;
   display: inline-block;
 }
 
 .logo img {
-  display: block; /* Important pour enlever les petits espaces sous l’image */
+  display: block; /* pour enlever les espaces sous l’image */
 }
 
 .logo::after {
@@ -84,4 +93,32 @@ position: relative;
 
 .logo:hover::after {
   opacity: 1;
+}
+
+/* Media Queries pour mobile */
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column; /* nav en colonne */
+    align-items: center; /* centrer les éléments */
+    padding: 10px;
+  }
+
+  .nav-links ul {
+    display: flex;
+    flex-direction: column; /* liens en colonne */
+    gap: 10px; /* espace entre les liens */
+  }
+
+  .nav-links ul li {
+    display: block; /* forcer bloc en mobile */
+    padding: 10px 0;
+  }
+
+  .nav-links ul li a {
+    font-size: 24px; /* plus petit en mobile */
+  }
+
+  .logo::after {
+    font-size: 16px; /* plus petit texte d’info */
+  }
 }

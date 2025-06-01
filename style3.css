@@ -1,66 +1,78 @@
-@media (max-width: 600px) {
-  nav {
-    padding: 10px;
-  }
+/* Général */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Anton', sans-serif;
+  box-sizing: border-box;
 }
-*{
-	margin: 0;
-	padding: 0;
-font-family: 'Anton', sans-serif;
-}
-.header{
+
+/* HEADER */
+.header {
   min-height: 100vh;
   width: 100%;
   background-image: url(visage.jpg);
   background-position: center;
   background-size: cover;
   position: relative;
-
-.nav-links ul li + li {
-    margin-top: 15px;
-  }
-
 }
-nav{
-	display: flex;
-	padding: 2% 6%;
-	justify-content: space-between;
-	align-items: right;
+
+/* NAVIGATION */
+nav {
+  display: flex;
+  padding: 2% 6%;
+  justify-content: space-between;
+  align-items: center; /* align-items: right ➜ pas valide, correction */
 }
+
+nav .logo {
+  width: 80px; /* un peu plus petit pour le mobile */
+}
+
 .nav-links {
-	flex: 1;
-	text-align: center;
+  flex: 1;
+  text-align: center;
+}
+
+.nav-links ul {
+  padding: 0;
+  margin: 0;
 }
 
 .nav-links ul li {
-list-style: none;
-display: inline-block;
-padding: 15px 15px;
-position: relative;
+  list-style: none;
+  display: inline-block;
+  padding: 10px 10px;
+  position: relative;
 }
+
 .nav-links ul li a {
-	color: #e83363;
-	text-decoration:none;
-	font-size: 40px;
+  color: #e83363;
+  text-decoration: none;
+  font-size: 30px; /* réduit pour mobile */
 }
-.nav-links ul li ::after {
-	content: '';
-	width: 0%;
-	height: 2px;
-	background:rgb(236, 164, 204);
-	display: block;
-	margin: auto;
-	transition: 0.5s;
+
+.nav-links ul li::after {
+  content: '';
+  width: 0%;
+  height: 2px;
+  background: rgb(236, 164, 204);
+  display: block;
+  margin: auto;
+  transition: 0.5s;
 }
-.nav-links ul li :hover::after {
-	width: 100%;
-}.logo {
+
+.nav-links ul li:hover::after {
+  width: 100%;
+}
+
+/* LOGO HOVER TEXTE */
+.logo {
   position: relative;
   display: inline-block;
 }
 
 .logo img {
-  display: block; /* Important pour enlever les petits espaces sous l’image */
+  display: block;
 }
 
 .logo::after {
@@ -70,9 +82,9 @@ position: relative;
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
-  font-size: 20px;
+  font-size: 16px; /* réduit pour mobile */
   background: rgba(0, 0, 0, 0.6);
-  padding: 10px 20px;
+  padding: 5px 10px;
   border-radius: 10px;
   opacity: 0;
   transition: opacity 0.3s ease;
@@ -82,4 +94,36 @@ position: relative;
 
 .logo:hover::after {
   opacity: 1;
+}
+
+/* Ajoute un espace entre les éléments de la liste si affichage vertical */
+.nav-links ul li + li {
+  margin-top: 10px;
+}
+
+/* -------- MEDIA QUERIES -------- */
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  nav .logo {
+    width: 60px;
+    margin-bottom: 10px;
+  }
+
+  .nav-links ul li {
+    display: block;
+    padding: 8px 0;
+  }
+
+  .nav-links ul li a {
+    font-size: 20px;
+  }
+
+  .logo::after {
+    font-size: 14px;
+    padding: 4px 8px;
+  }
 }
